@@ -53,6 +53,30 @@ h1 {
     font-size: 45px;
 }
 
+h2 {
+    display: flex;
+    justify-content: left;
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-shadow: 2px 2px 3px white;
+    color: rgb(15, 15, 71);
+    font-size: 25px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-shadow: 2px 2px 3px white;
+    color: rgb(15, 15, 71);
+    font-size: 25px;
+}
+
 .container {
     display: flex;
     margin-top: 90px;
@@ -107,10 +131,9 @@ h1 {
 }
 
 .results {
-    background: #1d2746;
-    margin-top: 20px;
-    color: white;
-    padding: 20px;
+    background: rgb(4, 4, 37);
+    margin-top: 5px;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
@@ -119,7 +142,7 @@ h1 {
 .result-item {
     border-bottom: 1px solid #ddd;
     padding: 10px;
-    background-color: rgb(197, 221, 230); 
+    background: radial-gradient(circle, rgba(63,76,251,1) 0%, rgba(44,148,207,1) 100%); 
     margin-bottom: 10px;
     border-radius: 4px;
     color: black;
@@ -129,36 +152,90 @@ h1 {
     border-bottom: none;
 }
 
-.result-item a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: black;
-    color: #fff;
+.results-header {
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
     text-decoration: none;
-    border-radius: 4px;
-}
-.result-item a:hover {
-    background-color: rgb(36, 34, 34);
+    text-shadow: 2px 2px 3px white;
+    color: rgb(15, 15, 71);
+    font-size: 35px;
 }
 
 .search-history {
     margin-top: 20px;
 }
 
-.history-btn {
+.search-history .history-btn {
     display: block;
     width: 100%;
-    background-color: #22c8e6;
-    color: #fff;
+    background-color: #5c6566;
+    color: #000000;
     border: none;
     cursor: pointer;
     padding: 10px;
     margin-bottom: 5px;
-    text-align: left;
+    text-align: center;
     border-radius: 4px;
+    font-weight: bold;
+    font-size: 15px;
 }
 
-.history-btn:hover {
-    background-color: #486369;
+.search-history .history-btn:hover {
+    background-color: #41b0c4;
 }
+
+.today-forecast, .five-day-forecast {
+    background: radial-gradient(circle, rgba(63,76,251,1) 0%, rgba(44,148,207,1) 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.today-forecast {
+    width: 525%;
+    margin-top: 25px;
+    text-align: left;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+
+}
+
+.five-day-forecast-header {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: left;
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-shadow: 2px 2px 3px white;
+    color: rgb(15, 15, 71);
+    font-size: 25px;
+}
+
+.five-day-forecast {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.forecast-item {
+    background-color: rgb(220, 225, 226); 
+    color: black;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    width: 18%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-item.today {
+    width: 100%; /* Ensure it takes up full width */
+    padding: 30px; /* Increase padding for larger size */
+}
+
