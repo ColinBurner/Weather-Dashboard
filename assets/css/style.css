@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #c8c7ce;
+    background-color: #a0adab;
     margin: 0;
     padding: 0;
 }
@@ -22,15 +22,6 @@ header {
     z-index: 1000;
     border-style: ridge;
     border-color: black;
-}
-
-h3 {
-    font-family: "Freeman", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: underline;
-    font-size: 26px;
-    font-weight: bold;
 }
 
 p {
@@ -71,9 +62,10 @@ h3 {
     font-weight: 400;
     font-style: normal;
     text-decoration: none;
-    text-shadow: 2px 2px 3px rgb(255, 255, 255);
-    color: rgb(14, 20, 65);
-    font-size: 25px;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    color: rgb(154, 231, 255);
+    font-size: 26px;
+    text-decoration: underline;
 }
 
 .container {
@@ -232,7 +224,7 @@ h3 {
 }
 
 .forecast-item { 
-    color: rgb(104, 205, 223);
+    color: rgb(243, 243, 243);
     padding: 10px;
     border-radius: 15px;
     text-align: center;
@@ -248,7 +240,7 @@ h3 {
 
 .five-day-forecast .forecast-item {
     background-color: rgb(12, 10, 87); 
-    color: rgb(104, 205, 223);
+    color: rgb(255, 255, 255);
     padding: 5px;
     border-radius: 15px;
     text-align: center;

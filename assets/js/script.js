@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const apiKey = "df807885136e1e2bfa08b6ea6d7bdcc3";
-    const searchForm = document.getElementById("searchForm");
-    const queryInput = document.getElementById("query");
-    const resultsContainer = document.getElementById("resultsContainer");
+    const apiKey = "cf9f5a4f11d75beadd4a0347b0d11227"; // API key from OpenWeather
+    const searchForm = document.getElementById("searchForm"); // Form for city search
+    const queryInput = document.getElementById("query"); 
+    const resultsContainer = document.getElementById("resultsContainer"); 
     const todayForecast = document.getElementById("todayForecast");
     const fiveDayForecast = document.getElementById("fiveDayForecast");
     const fiveDayForecastHeader = document.getElementById("fiveDayForecastHeader");
@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const geoData = await geoResponse.json();
             console.log("Geo data:", geoData);
 
-            if (!geoData.length) throw new Error("City not found");
+            if (!geoData.length) throw new Error("City not found"); // error message for if city is not found
 
-            const { lat, lon } = geoData[0];
+            const { lat, lon } = geoData[0]; // gets the lon and lat of the city
             console.log(`Fetching weather data for lat: ${lat}, lon: ${lon}`);
             const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`);
             const weatherData = await weatherResponse.json();
@@ -27,10 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return weatherData;
         } catch (error) {
             console.error("Error fetching weather data:", error);
-            alert("Failed to fetch weather data. Please try again.");
+            alert("Failed to fetch weather data. Please try again."); // alert for errors
         }
     }
 
+    // function to display weather data
     function displayWeather(data) {
         todayForecast.innerHTML = "";
         fiveDayForecast.innerHTML = "";
