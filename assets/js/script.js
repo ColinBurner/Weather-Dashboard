@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const city = data.city.name;
         const current = data.list[0];
     
-        // Function to find the closest forecast entry to a specific hour (12:00 PM)
+        // Function to find the closest forecast entry to a specific hour (12:00 PM) did this to get as close to the high temp for the day
         function getClosestToNoon(entries) {
             return entries.reduce((closest, entry) => {
                 const currentHour = new Date(entry.dt * 1000).getHours();
@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     
-        // Get unique days from the forecast data
+        // Gets unique days from the forecast data
         const uniqueDays = [...new Set(data.list.map(entry => new Date(entry.dt * 1000).toDateString()))];
     
-        // Get forecast data for the next 5 days starting from tomorrow
+        // Gets forecast data for the next 5 days starting from tomorrow
         const forecast = uniqueDays.slice(1, 6).map(day => {
             const dayEntries = data.list.filter(entry => new Date(entry.dt * 1000).toDateString() === day);
             return getClosestToNoon(dayEntries);
@@ -68,9 +68,9 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
     
-        todayForecast.innerHTML = headerHTML + todayWeatherHTML;
+        todayForecast.innerHTML = headerHTML + todayWeatherHTML; // displays today's weather
     
-        fiveDayForecastHeader.innerHTML = "5-Day Forecast:";
+        fiveDayForecastHeader.innerHTML = "5-Day Forecast:"; // sets the header for the 5 day forecast
     
         const forecastHTML = forecast.map(entry => `
             <div class="forecast-item">
@@ -82,19 +82,19 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `).join("");
     
-        fiveDayForecast.innerHTML = forecastHTML;
+        fiveDayForecast.innerHTML = forecastHTML; // displays 5-day forecast 
         resultsContainer.classList.remove("hidden");
     
-        updateSearchHistory(city);
+        updateSearchHistory(city); // calls function to add latest city to history
     }
 
     // Function to update search history
     function updateSearchHistory(city) {
         if (!searchHistory.includes(city)) {
-            searchHistory.push(city);
-            localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+            searchHistory.push(city); // adds city to search history if not already present
+            localStorage.setItem("searchHistory", JSON.stringify(searchHistory)); // saves to localstorage
         }
-        displaySearchHistory();
+        displaySearchHistory(); // displays the updated search history
     }
 
     // Function to display search history
@@ -103,19 +103,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const historyList = searchHistory.map(city => `<button class="history-btn">${city}</button>`).join("");
         historyContainer.innerHTML = `<h3>Search History</h3>${historyList}`;
         document.querySelectorAll(".history-btn").forEach(btn => btn.addEventListener("click", (e) => {
-            fetchWeather(e.target.textContent).then(data => displayWeather(data));
+            fetchWeather(e.target.textContent).then(data => displayWeather(data)); // Fetches and displays weather data when a history button is clicked
         }));
     }
 
     // Event listener for form submission
     searchForm.addEventListener("submit", async function (e) {
         e.preventDefault();
-        const city = queryInput.value.trim();
+        const city = queryInput.value.trim(); // gets city name from input
         if (city) {
-            const weatherData = await fetchWeather(city);
-            if (weatherData) displayWeather(weatherData);
+            const weatherData = await fetchWeather(city); //fetches weather data for the city
+            if (weatherData) displayWeather(weatherData); // displays if fetched correctly
         }
     });
 
-    displaySearchHistory();
+    displaySearchHistory(); //displays search history on page load
 });
