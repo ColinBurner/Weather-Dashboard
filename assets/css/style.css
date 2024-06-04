@@ -1,9 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #1d2746;
+    background-color: #c8c7ce;
     margin: 0;
-    display: flex;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    text-align: center;
+    text-shadow: 2px 2px 3px black;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 60px;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(63,76,251,1) 0%, rgba(44,148,207,1) 100%);
+    top: 0;
+    z-index: 1000;
 }
 
 h3 {
@@ -29,20 +45,32 @@ a {
 h1 {
     display: flex;
     justify-content: center;
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
     font-style: normal;
-    color: rgb(30, 30, 65);
+    text-shadow: 2px 2px 3px white;
+    color: rgb(15, 15, 71);
+    font-size: 45px;
+}
+
+.container {
+    display: flex;
+    margin-top: 90px;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    height: calc(100vh - 80px); /* Adjusts to take the full height minus the header */
 }
 
 .search-container {
-    background: rgb(197, 221, 230);
+    background: radial-gradient(circle, rgba(63,76,251,1) 0%, rgba(44,148,207,1) 100%);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    width: 20%;
+    margin-right: 20px;
+    margin-top: 25px;
+    flex-shrink: 0; /*prevents the search container from shrinking*/
+    width: 400px;
 }
 
 .search-container form {
@@ -58,18 +86,29 @@ h1 {
 }
 
 .search-container button {
-    background-color: #28a745;
+    background-color: #22c8e6;
     color: #fff;
     border: none;
     cursor: pointer;
 }
 
 .search-container button:hover {
-    background-color: #218838;
+    background-color: #486369;
+}
+
+.results-container.hidden {
+    display: none;
+}
+
+.results-container {
+    flex-grow: 1;
+    box-sizing: border-box;
+    overflow-y: auto; /* Ensure the results container can scroll if content overflows */
 }
 
 .results {
     background: #1d2746;
+    margin-top: 20px;
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -103,6 +142,23 @@ h1 {
     background-color: rgb(36, 34, 34);
 }
 
-#back {
-    background-color: red;
+.search-history {
+    margin-top: 20px;
+}
+
+.history-btn {
+    display: block;
+    width: 100%;
+    background-color: #22c8e6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    border-radius: 4px;
+}
+
+.history-btn:hover {
+    background-color: #486369;
 }

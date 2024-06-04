@@ -4,32 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Shrikhand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Search Results</title>
+    <title>Weather Dashboard</title>
+</head>
 
-    <div class="search-container">
-        <form id="searchForm">
-            <h1>Library of Congress Search Engine</h1>
-            <input type="text" id="query" name="query" placeholder="Enter search query" required>
-            <select id="format" name="format">
-                <option value="">Select format (optional)</option>
-                <option value="json">JSON</option>
-                <option value="atom">Atom</option>
-                <option value="rss">RSS</option>
-            </select>
-            <button type="submit">Search</button>
-            <button class="back-button" id="back" onClick="goBack()">⬅️ Go Back</button>
-        </form>
-    </div>
+<body>
+    <header>Weather Dashboard</header>
+        <div class="container">
+            <div class="search-container">
+                <form id="searchForm">
+                    <h1>Search for a City</h1>
+                <input type="text" id="query" name="query" placeholder="Enter search query" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="historyContainer" class="search-history">
+                <!-- Search history will be displayed here -->
+            </div>
+        </div>
 
-    <div class="results-container">
+    <div class="results-container hidden" id="resultsContainer">
         <div class="results-header" id="results-header"></div>
         <div class="results" id="results">
             <!-- Results will be displayed here -->
         </div>
     </div>
+</div>
     <script src="./assets/js/script.js"></script>
-    </body>
+</body>
 
 </html>
