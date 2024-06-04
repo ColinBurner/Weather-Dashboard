@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const todayWeatherHTML = `
             <div class="forecast-item">
                 <h3>Today's Weather</h3>
+                <p><img src="https://openweathermap.org/img/wn/${current.weather[0].icon}.png" alt="${current.weather[0].description}"></p>
                 <p>Date: ${new Date(current.dt * 1000).toLocaleDateString()}</p>
-                <p>Temperature: ${current.main.temp} °F</p>
+                <p>Temp: ${current.main.temp} °F</p>
                 <p>Humidity: ${current.main.humidity} %</p>
                 <p>Wind Speed: ${current.wind.speed} m/s</p>
-                <p><img src="https://openweathermap.org/img/wn/${current.weather[0].icon}.png" alt="${current.weather[0].description}"></p>
             </div>
         `;
 
@@ -60,10 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const forecastHTML = forecast.map(entry => `
             <div class="forecast-item">
                 <h3>${new Date(entry.dt * 1000).toLocaleDateString()}</h3>
-                <p>Temperature: ${entry.main.temp} °F</p>
+                <p><img src="https://openweathermap.org/img/wn/${entry.weather[0].icon}.png" alt="${entry.weather[0].description}"></p>
+                <p>Temp: ${entry.main.temp} °F</p>
                 <p>Humidity: ${entry.main.humidity} %</p>
                 <p>Wind Speed: ${entry.wind.speed} m/s</p>
-                <p><img src="https://openweathermap.org/img/wn/${entry.weather[0].icon}.png" alt="${entry.weather[0].description}"></p>
             </div>
         `).join("");
 
