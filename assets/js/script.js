@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchForm = document.getElementById("searchForm");
     const queryInput = document.getElementById("query");
     const resultsContainer = document.getElementById("resultsContainer");
-    const resultsHeader = document.getElementById("results-header");
     const todayForecast = document.getElementById("todayForecast");
     const fiveDayForecast = document.getElementById("fiveDayForecast");
     const fiveDayForecastHeader = document.getElementById("fiveDayForecastHeader");
