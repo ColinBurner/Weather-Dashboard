@@ -19,7 +19,7 @@ header {
     padding: 20px;
     background: linear-gradient(-90deg, rgba(37,41,94,1) 0%, rgba(0,61,255,1) 100%);
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /*ensures header is on top of other elements*/
     border-style: ridge;
     border-color: black;
 }
@@ -34,7 +34,7 @@ p {
 
 h1 {
     display: flex;
-    justify-content: center;
+    justify-content: center; /*centers h1 element*/
     font-family: "Shrikhand", serif;
     font-weight: 400;
     font-style: normal;
@@ -92,7 +92,7 @@ h3 {
 
 .search-container form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*stacks the form elements vertically*/
 }
 
 .search-container input, .search-container select, .search-container button {
@@ -106,7 +106,7 @@ h3 {
     background-color: #22c8e6;
     color: #fff;
     border: none;
-    cursor: pointer;
+    cursor: pointer; /*changes the cursor to a pointer on the button*/
     border-radius: 15px;
     border-style: ridge;
     border-color: black;
@@ -117,11 +117,11 @@ h3 {
 }
 
 .results-container.hidden {
-    display: none;
+    display: none; /*hides the results container until a search is made*/
 }
 
 .results-container {
-    flex-grow: 1;
+    flex-grow: 1; /*allows the container to grow*/
     box-sizing: border-box;
     
 }
@@ -217,7 +217,7 @@ h3 {
 
 .five-day-forecast {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*creates space between five day forecast items*/
     flex-direction: row;
     border-style: ridge;
     border-color: black;
