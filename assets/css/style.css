@@ -17,9 +17,11 @@ header {
     color: white;
     width: 100%;
     padding: 20px;
-    background: radial-gradient(circle, rgba(63,76,251,1) 0%, rgba(44,148,207,1) 100%);
+    background: linear-gradient(-90deg, rgba(37,41,94,1) 0%, rgba(0,61,255,1) 100%);
     top: 0;
     z-index: 1000;
+    border-style: ridge;
+    border-color: black;
 }
 
 h3 {
@@ -36,10 +38,7 @@ p {
     font-weight: bold;
     font-style: normal;
     font-size: 18px;
-}
-
-a {
-    color: rgb(56, 161, 196);
+    text-shadow: 2px 2px 3px black;
 }
 
 h1 {
@@ -50,7 +49,7 @@ h1 {
     font-style: normal;
     text-shadow: 2px 2px 3px white;
     color: rgb(15, 15, 71);
-    font-size: 45px;
+    font-size: 40px;
 }
 
 h2 {
@@ -61,7 +60,7 @@ h2 {
     font-style: normal;
     text-decoration: none;
     text-shadow: 2px 2px 3px white;
-    color: rgb(15, 15, 71);
+    color: rgb(197, 229, 250);
     font-size: 25px;
 }
 
@@ -72,8 +71,8 @@ h3 {
     font-weight: 400;
     font-style: normal;
     text-decoration: none;
-    text-shadow: 2px 2px 3px white;
-    color: rgb(14, 14, 90);
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    color: rgb(104, 205, 223);
     font-size: 25px;
 }
 
@@ -87,7 +86,7 @@ h3 {
 }
 
 .search-container {
-    background: radial-gradient(circle, rgba(63,76,251,1) 0%, rgba(44,148,207,1) 100%);
+    background: linear-gradient(-90deg, rgb(56, 64, 173) 0%, rgba(0,61,255,1) 100%);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -95,6 +94,8 @@ h3 {
     margin-top: 25px;
     flex-shrink: 0; /*prevents the search container from shrinking*/
     width: 400px;
+    border-style: ridge;
+    border-color: black;
 }
 
 .search-container form {
@@ -114,6 +115,9 @@ h3 {
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 15px;
+    border-style: ridge;
+    border-color: black;
 }
 
 .search-container button:hover {
@@ -127,7 +131,7 @@ h3 {
 .results-container {
     flex-grow: 1;
     box-sizing: border-box;
-    overflow-y: auto; /* Ensure the results container can scroll if content overflows */
+    
 }
 
 .results {
@@ -142,7 +146,6 @@ h3 {
 .result-item {
     border-bottom: 1px solid #ddd;
     padding: 10px;
-    background: radial-gradient(circle, rgba(63,76,251,1) 0%, rgba(44,148,207,1) 100%); 
     margin-bottom: 10px;
     border-radius: 15px;
     color: black;
@@ -158,7 +161,7 @@ h3 {
     font-style: normal;
     text-decoration: none;
     text-shadow: 2px 2px 3px white;
-    color: rgb(15, 15, 71);
+    color: rgb(20, 20, 87);
     font-size: 35px;
 }
 
@@ -179,6 +182,8 @@ h3 {
     border-radius: 15px;
     font-weight: bold;
     font-size: 15px;
+    border-style: ridge;
+    border-color: black;
 }
 
 .search-history .history-btn:hover {
@@ -186,7 +191,7 @@ h3 {
 }
 
 .today-forecast, .five-day-forecast {
-    background: linear-gradient(-90deg, rgba(21,32,180,1) 0%, rgba(44,148,207,1) 100%);
+    background: linear-gradient(-90deg, rgba(37,41,94,1) 0%, rgba(0,61,255,1) 100%);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -198,9 +203,11 @@ h3 {
     text-align: left;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-
+    box-shadow: 0 0 10px rgba(20, 8, 122, 0.1);
+    margin-bottom: 15px;
+    width: 97%;
+    border-style: ridge;
+    border-color: black;
 }
 
 .five-day-forecast-header {
@@ -220,29 +227,32 @@ h3 {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    border-style: ridge;
+    border-color: black;
 }
 
-.forecast-item {
-    background-color: rgb(125, 189, 241); 
-    color: rgb(0, 0, 0);
+.forecast-item { 
+    color: rgb(104, 205, 223);
     padding: 10px;
     border-radius: 15px;
     text-align: center;
-    width: 18%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 98.5%;
 }
 
-.forecast-item.today {
-    width: 100%; /* Ensure it takes up full width */
+.forecast-item .today {
+    width: 100%;
     padding: 30px; /* Increase padding for larger size */
+    box-shadow: none;
+    background: linear-gradient(-90deg, rgba(37,41,94,1) 0%, rgba(0,61,255,1) 100%);
 }
 
 .five-day-forecast .forecast-item {
-    background-color: rgb(128, 194, 248); 
-    color: rgb(0, 0, 0);
-    padding: 10px;
+    background-color: rgb(12, 10, 87); 
+    color: rgb(104, 205, 223);
+    padding: 5px;
     border-radius: 15px;
     text-align: center;
     width: 18%; /* Adjust width of the five-day forecast boxes */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-style: ridge;
+    border-color: black;
 }

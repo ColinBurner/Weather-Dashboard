@@ -32,16 +32,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to display weather data
     function displayWeather(data) {
         todayForecast.innerHTML = "";
         fiveDayForecast.innerHTML = "";
         const city = data.city.name;
         const current = data.list[0];
-        const forecast = data.list.filter((entry, index) => index % 8 === 0);
-
+    
+        // Function to find the closest forecast entry to a specific hour (12:00 PM)
+        function getClosestToNoon(entries) {
+            return entries.reduce((closest, entry) => {
+                const currentHour = new Date(entry.dt * 1000).getHours();
+                return Math.abs(currentHour - 12) < Math.abs(new Date(closest.dt * 1000).getHours() - 12) ? entry : closest;
+            });
+        }
+    
+        // Get unique days from the forecast data
+        const uniqueDays = [...new Set(data.list.map(entry => new Date(entry.dt * 1000).toDateString()))];
+    
+        // Get forecast data for the next 5 days starting from tomorrow
+        const forecast = uniqueDays.slice(1, 6).map(day => {
+            const dayEntries = data.list.filter(entry => new Date(entry.dt * 1000).toDateString() === day);
+            return getClosestToNoon(dayEntries);
+        });
+    
         const headerHTML = `<div class="results-header">Weather in ${city}</div>`;
-        
+    
         const todayWeatherHTML = `
             <div class="forecast-item">
                 <h3>Today's Weather</h3>
@@ -52,11 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>Wind Speed: ${current.wind.speed} m/s</p>
             </div>
         `;
-
+    
         todayForecast.innerHTML = headerHTML + todayWeatherHTML;
-
+    
         fiveDayForecastHeader.innerHTML = "5-Day Forecast:";
-
+    
         const forecastHTML = forecast.map(entry => `
             <div class="forecast-item">
                 <h3>${new Date(entry.dt * 1000).toLocaleDateString()}</h3>
@@ -66,10 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>Wind Speed: ${entry.wind.speed} m/s</p>
             </div>
         `).join("");
-
+    
         fiveDayForecast.innerHTML = forecastHTML;
         resultsContainer.classList.remove("hidden");
-
+    
         updateSearchHistory(city);
     }
 
