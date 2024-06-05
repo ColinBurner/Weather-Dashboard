@@ -62,17 +62,17 @@ h3 {
     font-weight: 400;
     font-style: normal;
     text-decoration: none;
-    text-shadow: 2px 2px 3px rgb(0, 0, 0);
-    color: rgb(154, 231, 255);
+    text-shadow: 2px 2px 3px rgb(26, 67, 180);
+    color: rgb(112, 247, 252);
     font-size: 26px;
     text-decoration: underline;
 }
 
 .container {
     display: flex;
-    margin-top: 90px;
+    margin-top: 110px;
     width: 100%;
-    padding: 15px;
+    padding-left: 5px;
     box-sizing: border-box;
     height: calc(100vh - 80px); /* Adjusts to take the full height minus the header */
 }
@@ -82,7 +82,7 @@ h3 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-right: 20px;
+    margin-right: 10px;
     margin-top: 25px;
     flex-shrink: 0; /*prevents the search container from shrinking*/
     width: 400px;
@@ -123,7 +123,6 @@ h3 {
 .results-container {
     flex-grow: 1; /*allows the container to grow*/
     box-sizing: border-box;
-    
 }
 
 .results {

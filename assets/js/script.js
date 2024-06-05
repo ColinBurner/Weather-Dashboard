@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
         const headerHTML = `<div class="results-header">Weather in ${city}</div>`;
     
-        const todayWeatherHTML = `
+        const todayWeatherHTML = ` 
             <div class="forecast-item">
                 <h3>Today's Weather</h3>
                 <p><img src="https://openweathermap.org/img/wn/${current.weather[0].icon}.png" alt="${current.weather[0].description}"></p>
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>Humidity: ${current.main.humidity} %</p>
                 <p>Wind Speed: ${current.wind.speed} m/s</p>
             </div>
-        `;
+        `; // creates html elements for todays weather based on user city input
     
         todayForecast.innerHTML = headerHTML + todayWeatherHTML; // displays today's weather
     
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>Humidity: ${entry.main.humidity} %</p>
                 <p>Wind Speed: ${entry.wind.speed} m/s</p>
             </div>
-        `).join("");
+        `).join(""); // creates html elements for 5 day forecast based on user city input
     
         fiveDayForecast.innerHTML = forecastHTML; // displays 5-day forecast 
         resultsContainer.classList.remove("hidden");
